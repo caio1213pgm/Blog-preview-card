@@ -43,6 +43,7 @@ body{
     background-color: var(--amarelo);
     color: var(--preto);
     text-decoration: none;
+    cursor: auto;
 
     padding: 6px 12px;
     border-radius: 4px;
@@ -60,6 +61,10 @@ body{
     font-size: 25px;
     font-weight: 800;
     margin: 12px 0px;
+}
+.card-content h1:hover{
+    color: var(--amarelo);
+    cursor: pointer;
 }
 
 .card-content p{
