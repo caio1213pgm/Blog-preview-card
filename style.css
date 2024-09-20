@@ -26,7 +26,7 @@ body{
     background-color: #ffffff;
     border-radius: 20px;
     border: 1px solid;
-    box-shadow: 8px 8px 0px;;
+    box-shadow: 8px 8px 0px;
 
     padding: 25px;
     width: 384px;
@@ -66,6 +66,7 @@ body{
     color: var(--p-color);
     font-size: 16px;
     font-weight: 500;
+    line-height: 1.5rem;
 }
 .card-autor{
     display: flex;
@@ -74,7 +75,25 @@ body{
 .card-autor h2{
     margin-left: 12px;
     font-size: 16px;
+    font-weight: 800;
 }
 .card-autor img{
     width: 32px;
+}
+
+@media only screen and (max-width: 767px){
+    .card-main{
+        width: 327px;
+        height: 470px;
+    }
+
+    .card-content a{
+        font-size: 12px;
+    }
+    .card-content h1{
+        font-size: 20px;
+    }
+    .card-content p{
+        font-size: 14px;
+    }
 }
