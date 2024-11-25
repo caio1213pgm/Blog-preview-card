@@ -1,0 +1,81 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled5.ipynb",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/caio1213pgm/Blog-preview-card/blob/main/gerador%20senha\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2A8okd1AYfSh",
+        "outputId": "3d8e3f21-6f7c-4438-d8d5-542d956425a8",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "import random\n",
+        "import string\n",
+        "\n",
+        "def gerar_senha(tamanho=12):\n",
+        "    if tamanho < 6:\n",
+        "        raise ValueError(\"O tamanho da senha deve ser pelo menos 6 caracteres.\")\n",
+        "\n",
+        "    letras_minusculas = string.ascii_lowercase\n",
+        "    letras_maiusculas = string.ascii_uppercase\n",
+        "    numeros = string.digits\n",
+        "    caracteres_especiais = string.punctuation\n",
+        "\n",
+        "    senha = [\n",
+        "        random.choice(letras_minusculas),\n",
+        "        random.choice(letras_maiusculas),\n",
+        "        random.choice(numeros),\n",
+        "        random.choice(caracteres_especiais)\n",
+        "    ]\n",
+        "\n",
+        "    todos_caracteres = letras_minusculas + letras_maiusculas + numeros + caracteres_especiais\n",
+        "    senha += random.choices(todos_caracteres, k=tamanho - 4)\n",
+        "\n",
+        "    random.shuffle(senha)\n",
+        "\n",
+        "    return ''.join(senha)\n",
+        "\n",
+        "print(\"Alunas: Geovanna, Êmilly, Evelyn, Yalle\")\n",
+        "tamanho_senha = int(input(\"Digite o tamanho da senha desejada: \"))\n",
+        "senha_gerada = gerar_senha(tamanho_senha)\n",
+        "print(\"Senha gerada:\", senha_gerada)"
+      ],
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alunas: Geovanna, Êmilly, Evelyn, Yalle\n",
+            "Digite o tamanho da senha desejada: 6\n",
+            "Senha gerada: Oh\"8Jj\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
